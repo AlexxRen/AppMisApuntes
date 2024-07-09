@@ -61,19 +61,32 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\AboutPage.xaml">
+	  <Compile Update="Views\AllNotesPage.xaml.cs">
+	    <DependentUpon>AllNotesPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ARAboutPage.xaml.cs">
+	    <DependentUpon>ARAboutPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ARNotePage.xaml.cs">
+	    <DependentUpon>ARNotePage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\ARAboutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\AllNotesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\NotePage.xaml">
+	  <MauiXaml Update="Views\ARNotePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
